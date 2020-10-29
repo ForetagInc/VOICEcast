@@ -1,27 +1,19 @@
-# shoutcast
+# VOICEcast
 
-TODO: Write a description here
+VOICECast is an open source streaming media (audio) server, which currently supports MP3 streams. Useful applications of Voicecast are creating internet based radio stations, streaming podcasts or a personal jukebox.
 
-## Installation
-
-TODO: Write installation instructions here
+Voicecast is distributed under the MIT License.
 
 ## Usage
 
-TODO: Write usage instructions here
+Build:
 
-## Development
+```crystal build ./source/server.cr --release```
 
-TODO: Write development instructions here
+Run:
 
-## Contributing
-
-1. Fork it (<https://github.com/your-github-user/shoutcast/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+```./server```
 
 ## Contributors
 
-- [your-name-here](https://github.com/your-github-user) - creator and maintainer
+- [Chiru B](https://github.com/itsezc) - Creator and Maintainer
