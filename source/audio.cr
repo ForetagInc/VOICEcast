@@ -24,4 +24,8 @@ module Shoutcast::Audio
 			end
 		end 
 	end
+
+	def stream_pipe(data : IO::Memory)
+		
+	end
 end

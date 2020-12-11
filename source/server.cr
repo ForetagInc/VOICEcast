@@ -1,8 +1,11 @@
 require "kemal"
 require "./audio"
 
-module Shoutcast
+module Shoutcast::Server
 	CHUNK_SIZE = 32768
+
+	@@stream = Array(String).new
+	class_property stream
 
 	@@skipper = Channel(Bool).new
 	class_property skipper
@@ -38,6 +41,20 @@ module Shoutcast
 						context.response.write Bytes.new buffer.to_unsafe, size: count, read_only: true
 					# end
 				end
+			end
+		end
+	end
+
+	post "/stream" do | context |
+		HTTP::FormData.parse(context.request) do | upload |
+			filename = upload.filename
+
+			if !filename.is_a?(String)
+				p "No filename provided"
+			else
+				file = File.tempfile(filename).path
+				File.write(file, upload.body)
+				stream.push(file)
 			end
 		end
 	end

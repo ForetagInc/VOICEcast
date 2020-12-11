@@ -4,6 +4,10 @@ VOICECast is an open source streaming media (audio) server, which currently supp
 
 Voicecast is distributed under the MIT License.
 
+## Pre-Requisites
+
+- FFMpeg
+
 ## Usage
 
 Build:
